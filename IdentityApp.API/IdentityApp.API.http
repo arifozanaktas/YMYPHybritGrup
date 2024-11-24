@@ -1,0 +1,42 @@
+@baseAddress = https://localhost:7161
+@userId=20
+@Id=7a9e5266-8833-4dc0-c0e4-08dcfe9c881e
+POST {{baseAddress}}/api/users
+Accept: application/json
+Content-Type: application/json
+{
+  "userName": "ayse16",
+  "email": "ayse16@outlook.com",
+  "password": "Password12*"
+}
+###
+PUT {{baseAddress}}/api/users
+Accept: application/json
+Content-Type: application/json
+{
+  "Id":"{{Id}}",
+  "userName": "hasanned16",
+  "email": "hasanned16@outlook.com",
+  "password": "Password12*"
+}
+###
+DELETE {{baseAddress}}/api/users/{{Id}}
+Accept: application/json
+###
+POST {{baseAddress}}/api/auth/signin
+Accept: application/json
+Content-Type: application/json
+{
+  "email": "ayse16@outlook.com",
+  "password": "Password12*"
+}
+###
+POST {{baseAddress}}/api/users/AddRoleToUser
+Accept: application/json
+Content-Type: application/json
+{
+  "userId": "4ca33db0-81e8-4b1f-ad45-08dd01ace1d2",
+  "roleName": "editor"
+}
+
+
